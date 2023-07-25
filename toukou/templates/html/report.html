@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>報告画面</title>
+  <link rel="stylesheet"  href="./../../../static/css/normalize.css">
+  <link rel="stylesheet"  href="./../../../static/css/houkoku.css">
+  <script src="./../../../static/js/houkoku.js"></script>
+  <style>
+
+    #date {
+      text-align: center;
+    }
+  </style>
+
+
+</head>
+<body onload="setTodayDate()">
+  <header>
+    <h1>報告画面</h1>
+  </header>
+
+  <section class="container">
+    {% block content %}
+    <form action="" method="POST">{% csrf_token %}
+      <label for="name">氏名:</label>
+      <div class="form-group" style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; text-align: center;">
+        <label1 name="name" for="name">藤﨑 隆斗</label1>
+      </div>
+<br>
+      <div class="form-group">
+        <label for="date">日付:</label>
+        <div class="date-field" style="text-align: center;">
+          <label1 id="date-label"></label>
+          <input type="date" id="date" name="date" required>
+        </div>
+      </div>
+<br>
+      <div class="form-group" >
+        <label for="attendance">出欠状況:</label>
+        <div class="attendance-buttons">
+          <button style="text-align: center" type="button" class="attendance-button"onclick="selectAttendanceButton(this)">出席</button>
+          <button style="text-align: center" type="button" class="attendance-button"onclick="selectAttendanceButton(this)">欠席</button>
+          <button style="text-align: center" type="button" class="attendance-button"onclick="selectAttendanceButton(this)">遅刻</button>
+        </div>
+        <div class="attendance-buttons">
+          <button style="text-align: center" type="button" class="attendance-button"onclick="selectAttendanceButton(this)">欠課</button>
+          <button style="text-align: center" type="button" class="attendance-button"onclick="selectAttendanceButton(this)">早退</button>
+          <button style="text-align: center" type="button" class="attendance-button"onclick="selectAttendanceButton(this)">その他</button>
+        </div>
+      </div>
+<br>
+      <div class="form-group">
+        <label for="report">報告内容:</label>
+        <textarea id="report" name="report" required></textarea>
+      </div>
+<br>
+
+        <div style="text-align: center" class="form-group">
+          <input type="submit"  onclick="confirmSubmission()" value="報告する">
+          
+          <input type="submit" id="minput" onclick="location.href='http://127.0.0.1:8000/top/'" value="キャンセル">
+        </div>
+    </form>  
+    {% endblock %}
+  </section>
+
+</body>
+</html>
