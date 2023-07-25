@@ -151,9 +151,6 @@ LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 APPEND_SLASH = True
 
-.spyproject
-db.sqlite3
-local_setting.py
 
 try:
     from .local_settings import *
