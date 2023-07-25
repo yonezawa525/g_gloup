@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-1e7xitl#8^av5#rna(!otja2#dyoy)&$32$o6k8^7ky8^!ud$_
 
 # エラーを表示させるときはここを触る
 # falseに変換するだけで解決できる
-DEBUG = False
+DEBUG = True
 
 # falseに変更する際はこちらのコメントアウトを解除する
 ALLOWED_HOSTS=[]
