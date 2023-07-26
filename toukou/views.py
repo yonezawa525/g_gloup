@@ -32,6 +32,7 @@ class Listattendview(ListView):
     template_name = 'html/itiran.html'
     login_url = '/login/'
     model = User
+    
 
     
 
@@ -61,7 +62,7 @@ class Listtopview(LoginRequiredMixin, ListView):
         return redirect ('login')
 
 class MypageView(LoginRequiredMixin, ListView):
-  template_name = 'login.html'
+    template_name = 'login.html'
     
 
 def index(request):
