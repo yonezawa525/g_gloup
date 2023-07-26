@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>500 Error</title>
-  <link rel="stylesheet"  href="./../../../static/css/normalize.css">
-  <link rel="stylesheet"  href="./../../../static/css/500error.css">
-  <script src="./../../../static/js/500error.js"></script>
+  <link rel="stylesheet"  href="{% static '/css/normalize.css' %}">
+  <link rel="stylesheet"  href="{% static '/css/500error.css' %}">
+  <script src="{% static '/js/500error.js %}"></script>
 </head>
 <body>
 

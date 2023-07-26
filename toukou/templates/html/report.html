@@ -1,11 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>報告画面</title>
-  <link rel="stylesheet"  href="./../../../static/css/normalize.css">
-  <link rel="stylesheet"  href="./../../../static/css/houkoku.css">
-  <script src="./../../../static/js/houkoku.js"></script>
+  <link rel="stylesheet"  href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet"  href="{% static 'css/houkoku.css' %}">
+  <script src="{% static 'js/houkoku.js' %}"></script>
   <style>
 
     #date {
@@ -59,7 +61,7 @@
         <div style="text-align: center" class="form-group">
           <input type="submit"  onclick="confirmSubmission()" value="報告する">
           
-          <input type="submit" id="minput" onclick="location.href='http://127.0.0.1:8000/top/'" value="キャンセル">
+          <input type="submit" id="minput" onclick="location.href='/top/'" value="キャンセル">
         </div>
     </form>  
     {% endblock %}

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 
@@ -9,9 +10,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>トップ画面</title>
-  <link rel="stylesheet"  href="./../../../static/css/normalize.css">
-  <link rel="stylesheet" href="./../../../static/css/top.css">
-  <script src="./../../../static/js/top.js"></script>
+  <link rel="stylesheet"  href="{% static '/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static '/css/top.css' %}">
+  <script src="{% static '/js/top.js' %}"></script>
 </head>
 <body>
   <header>
@@ -41,7 +42,7 @@
           <br><br>
           <div id = "resubmit">
             {% if request.user.is_authenticated %}
-              <p><a href="{% url 'account:login' %}">ログアウト</a></p>
+              <p><a href="{% url 'login' %}">ログアウト</a></p>
             {% endif %}
         </div>
     </div>

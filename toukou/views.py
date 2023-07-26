@@ -30,12 +30,13 @@ def authentication(request):
 
 class Listattendview(ListView):
     template_name = 'html/itiran.html'
+    login_url = '/login/'
     model = User
 
     
 
 
-class Listtikokuview(ListView):
+class Listtikokuview(LoginRequiredMixin,ListView):
     template_name = 'html/report.html'
     model = User
 
@@ -52,7 +53,7 @@ class Listtikokuview(ListView):
         context = super().get_context_data(**kwargs)
         return context
 
-class Listtopview(ListView):
+class Listtopview(LoginRequiredMixin, ListView):
     template_name = 'html/top.html'
     model = User
     def logout_view(request):

@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta charset="width=device-width, initial-scale=1.0">
     <title>一覧画面</title>
-    <link rel="stylesheet"  href="{%static 'css/itiran.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/itiran.css' %}">
   </head>
 <body>   
   <header>
@@ -42,7 +42,13 @@
     <tbody>
       <tr>
         <td>{{user.userNumber}}</td>
-        <td>{{user.userName}}</td>
+        <td>
+          {% if user.userNumber == 1 %}
+            <div>藤崎 隆斗</div>
+          {% else %}
+            <div>不明</div>
+          {% endif %}
+        </td>
         <td>
         {% if  user.userSta  == "10"%}
         <div>出席</div>
