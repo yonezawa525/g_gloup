@@ -46,7 +46,7 @@
           {% if user.userNumber == 1 %}
             <div>藤崎 隆斗</div>
           {% else %}
-            <div>不明</div>
+            <div>ゲストユーザー</div>
           {% endif %}
         </td>
         <td>
@@ -77,11 +77,11 @@
     {% endfor %}
   </table>
   <div id = "resubmit">
-    <input type="submit" value="ログアウト" onclick="location.href='http://127.0.0.1:8000/login/'">
+    <input type="submit" value="ログアウト" onclick="location.href='/login/'">
   </div>
 </body>
 {% else %}
-  <h1 style="text-align=center">403 Forbidden</h1>
+  <h1>403 Forbidden</h1>
   <p>あなたには権限がありません</p>
 {% endif %}
 {% endblock content %}
