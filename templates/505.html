@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>505 Error</title>
+  <link rel="stylesheet"  href="./../../../static/css/normalize.css">
+  <link rel="stylesheet"  href="./../../../static/css/505error.css">
+  <script src="./../../../static/js/505error.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>505 HTTP Version Not Supported.</h1>
+    <br>
+    <button  onclick="location.href='http://127.0.0.1:5500/django/g_gloup/toukou/templates/html/login3.html'" class="button">前に戻る</button>
+</body>
+</html>
+{% endblock content %}

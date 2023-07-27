@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トップ画面</title>
+  <link rel="stylesheet"  href="{% static '/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static '/css/top.css' %}">
+  <script src="{% static '/js/top.js' %}"></script>
+</head>
+<body>
+  <header>
+    <h1>トップ画面</h1>
+  </header>
+
+
+
+  <div class="container">
+    <label for="name">お知らせ:</label>
+      <div class="form-group" style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; text-align: center;">
+        <label1 for="name">今日は休校です。</label1>
+      </div>
+<br>
+      <div class="form-group" >
+        <label for="attendance">本日は？ :</label>
+        <div class="attendance-buttons">
+          <button type="button" class="attendance-button1 attendance-button"onclick="location.href='/report/'">出席</button>
+        </div>
+        <br>
+        <div class="attendance-buttons">
+            <button type="button" class="attendance-button"onclick="location.href='/report/'">遅刻</button>
+            <button type="button" class="attendance-button"onclick="location.href='/report/'">欠席</button>
+            <button type="button" class="attendance-button"onclick="location.href='/report/'">その他</button>
+          </div>
+
+          <br><br>
+          <div id = "resubmit">
+            {% if request.user.is_authenticated %}
+              <p><a href="{% url 'login' %}">ログアウト</a></p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock content %}
